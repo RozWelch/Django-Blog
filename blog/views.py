@@ -48,8 +48,8 @@ class PostDetail(View):
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
-            messages.success(request, 'Comment was successful!')
             comment.save()
+            messages.success(request, 'Comment was successful!')
         else:
             comment_form = CommentForm()
 
